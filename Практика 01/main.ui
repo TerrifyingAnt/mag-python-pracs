@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>441</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>441</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="msg_addr">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="msg_header">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="msg_text">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>120</y>
+      <width>301</width>
+      <height>291</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_addr">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Адрес получателя</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_header">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>70</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Тема</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_text">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Текст отправки</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>430</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Отправить</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>441</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
