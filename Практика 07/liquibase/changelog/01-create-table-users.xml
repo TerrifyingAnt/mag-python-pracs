@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="01" author="TerrifyingAnt">
+
+  <preConditions onFail="CONTINUE">
+    <not>
+      <tableExists tableName="user_table" />
+    </not>
+  </preConditions>
+
+  <!--ТАБЛИЧКА С ПОЛЬЗОВАТЕЛЯМИ-->
+    <createTable tableName="user_table"
+      remarks="Табличка с пользователями">
+
+      <column name="user_id" type="int" autoIncrement="true">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+
+      <column name="user_login" type="varchar(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+
+      <column name="user_password" type="varchar(255)">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="user_type" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="user_phone_number" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="user_full_name" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="user_avatar_source_path" type="varchar(255)">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+
+  </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="03" author="TerrifyingAnt">
+
+  <preConditions onFail="CONTINUE">
+    <not>
+      <tableExists tableName="order_table" />
+    </not>
+  </preConditions>
+  <!--ТАБЛИЧКА С ЗАКАЗАМИ-->
+  <createTable tableName="order_table">
+      <column name="order_id" type="int" autoIncrement="true">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+
+      <column name="user_id" type="int">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="order_date" type="timestamp">
+        <constraints nullable="false"/>
+      </column>
+
+      <column name="order_status" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
+  </createTable>
+
+    <addForeignKeyConstraint baseTableName="order_table" baseColumnNames="user_id"
+      constraintName="user_id_fk1"
+      referencedTableName="user_table" referencedColumnNames="user_id"/>
+
+    </changeSet>
+</databaseChangeLog>

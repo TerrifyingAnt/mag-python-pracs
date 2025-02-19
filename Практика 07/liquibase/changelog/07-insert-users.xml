@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="07" author="TerrifyingAnt">
+    <insert tableName="user_table">
+      <column name="user_full_name" value="test_user"/>
+      <column name="user_login" value="test@test.test"/>
+      <column name="user_password" value="cf7c906bfbb48e72288fc016bac0e6ed58b0dc2a"/>
+      <!-- блядский пароль: qwertyqwerty -->
+      <column name="user_phone_number" value="88005553535"/>
+      <column name="user_avatar_source_path" value="xd/xd/xd.jpg"/>
+      <column name="user_type" value="CUSTOMER"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

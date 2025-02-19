@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="06" author="TerrifyingAnt">
+
+  <preConditions onFail="CONTINUE">
+    <not>
+      <tableExists tableName="filter_table" />
+    </not>
+  </preConditions>
+
+  <!--ТАБЛИЧКА С ФИЛЬТРАМИ-->
+  <createTable tableName="filter_table">
+
+    <column name="filter_id" type="int" autoIncrement="true">
+      <constraints nullable="false" primaryKey="true"/>
+    </column>
+
+    <column name="tag_id" type="int">
+      <constraints nullable="false" unique="false"/>
+    </column>
+
+    <column name="figure_id" type="int">
+      <constraints nullable="false" unique="false"/>
+    </column>
+  </createTable>
+
+  <addForeignKeyConstraint baseTableName="filter_table" baseColumnNames="tag_id"
+    constraintName="tag_id_fk1"
+    referencedTableName="tag_table" referencedColumnNames="tag_id"/>
+
+  <addForeignKeyConstraint baseTableName="filter_table" baseColumnNames="figure_id"
+    constraintName="figure_id_fk2"
+    referencedTableName="figure_table" referencedColumnNames="figure_id"/>
+  </changeSet>
+</databaseChangeLog>

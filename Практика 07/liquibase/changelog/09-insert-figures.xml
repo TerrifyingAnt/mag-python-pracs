@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<changeSet id="09" author="TerrifyingAnt">
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Кастомная фигурка"/>
+        <column name="figure_description" value="Кастомная фигурка - шаблон для заказа"/>
+        <column name="figure_price" value="1000.00"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="2 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/template_figure"/>
+    </insert>
+
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Аянами Рей"/>
+        <column name="figure_description" value="Фигурка персонажа 'Аянами Рей' из известного аниме 'Евангелион'. Материалы: Пластик, Размеры: 26х12х12"/>
+        <column name="figure_price" value="4999.99"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="2 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/ayanami_rey"/>
+    </insert>
+
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Эрен Йегер"/>
+        <column name="figure_description" value="Фигурка персонажа 'Эрен Йегер' из аниме 'Титака Акаков'. Материалы: Пластик, Размеры: 26х12х12"/>
+        <column name="figure_price" value="7999.99"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="3 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/tataki_akakov"/>
+    </insert>
+
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Мародер"/>
+        <column name="figure_description" value="Пасхальная фигурка из игры Doom eternal. Материалы: Пластик, Размеры: 15х7х8"/>
+        <column name="figure_price" value="2999.00"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="3 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/marauder"/>
+    </insert>
+
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Икона Грех"/>
+        <column name="figure_description" value="Пасхальная фигурка из игры Doom eternal. Материалы: Пластик, Размеры: 15х7х8"/>
+        <column name="figure_price" value="2999.00"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="3 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/icon_of_sin"/>
+    </insert>
+
+    <insert tableName="figure_table">
+        <column name="figure_name" value="Какодемон"/>
+        <column name="figure_description" value="Пасхальная фигурка из игры Doom eternal. Материалы: Пластик, Размеры: 15х7х8"/>
+        <column name="figure_price" value="2999.00"/>
+        <column name="figure_rating" value="5.0"/>
+        <column name="figure_is_movable" value="false"/>
+        <column name="figure_making_time" value="3 дня"/>
+        <column name="figure_source_path" value="figures/default_figures/cacodemon"/>
+    </insert>
+
+    </changeSet>
+</databaseChangeLog>

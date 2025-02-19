@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<changeSet id="04" author="TerrifyingAnt">
+
+
+  <preConditions onFail="CONTINUE">
+    <not>
+      <tableExists tableName="order_item_table" />
+    </not>
+  </preConditions>
+<!--ТАБЛИЧКА С НЕСКОЛЬКИМИ ФИГУРКАМИ В ЗАКАЗЕ-->
+  <createTable tableName="order_item_table">
+    
+    <column name="order_item_id" type="int" autoIncrement="true">
+      <constraints nullable="false" unique="true" primaryKey="true"/>
+    </column>
+
+    <column name="type" type="int">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_count" type="int" defaultValueNumeric="1">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_price" type="real">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_id" type="int">
+      <constraints nullable="false"/>
+    </column>
+
+    <column name="figure_id" type="int">
+      <constraints nullable="false"/>
+    </column>
+
+    <column name="order_item_description" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_references" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_movable" type="boolean" defaultValueBoolean="false">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_colored" type="boolean" defaultValueBoolean="false">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_hair_link" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_eye_link" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_body_link" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+    <column name="order_item_title" type="varchar(255)" defaultValue="">
+      <constraints nullable="false" />
+    </column>
+
+  </createTable>
+
+  <addForeignKeyConstraint baseTableName="order_item_table" baseColumnNames="order_id"
+    constraintName="order_id_fk1"
+    referencedTableName="order_table" referencedColumnNames="order_id"/>
+
+  <addForeignKeyConstraint baseTableName="order_item_table" baseColumnNames="figure_id"
+    constraintName="figure_id_fk1"
+    referencedTableName="figure_table" referencedColumnNames="figure_id"/>
+    </changeSet>
+</databaseChangeLog>
